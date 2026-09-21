@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin — Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- Sidebar: note list -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <h1 class="wordmark">Margin</h1>
+      <button class="new-btn" id="newNoteBtn" title="New note" aria-label="New note">+</button>
+    </div>
+
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="Search notes" autocomplete="off">
+    </div>
+
+    <div class="note-list" id="noteList">
+      <!-- note items injected here -->
+    </div>
+
+    <div class="sidebar-foot">
+      <span id="statusLine">Connecting…</span>
+    </div>
+  </aside>
+
+  <!-- Editor pane -->
+  <main class="editor" id="editor">
+    <div class="editor-top">
+      <button class="back-btn" id="backBtn" aria-label="Back to list">←</button>
+      <div class="editor-meta" id="editorMeta"></div>
+      <button class="delete-btn" id="deleteBtn" title="Delete note">Delete</button>
+    </div>
+
+    <input type="text" id="titleInput" class="title-input" placeholder="Untitled" autocomplete="off">
+    <textarea id="contentInput" class="content-input" placeholder="Start writing…"></textarea>
+  </main>
+
+  <!-- Empty state, shown when no note is open -->
+  <div class="empty-state" id="emptyState">
+    <p>No note open.</p>
+    <button class="new-btn-large" id="emptyNewBtn">Write a new note</button>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
